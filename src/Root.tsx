@@ -2,8 +2,10 @@ import { Composition, Folder } from "remotion";
 import { HelloWorld } from "./HelloWorld";
 import { Logo } from "./HelloWorld/Logo";
 import { Title } from "./HelloWorld/Title";
+import { MyComposition } from "./myComposition"
 
 // Each <Composition> is an entry in the sidebar!
+import './index.css';
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -48,6 +50,17 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={{
           titleText: "Welcome to Remotion",
           titleColor: "#000000",
+        }}
+      />
+      <Composition
+        id="myComposition"
+        component={MyComposition}
+        durationInFrames={150}
+        fps={30}
+        width={1920}
+        height={1080}
+        defaultProps={{
+          
         }}
       />
 

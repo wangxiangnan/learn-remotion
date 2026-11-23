@@ -22,7 +22,7 @@ export const HelloWorld: React.FC<HelloWorldProps> = ({
   const { durationInFrames } = useVideoConfig();
 
   return (
-    <AbsoluteFill style={{ backgroundColor: "white" }}>
+    <AbsoluteFill className="bg-fuchsia-500">
       <Interactive.Div
         name="Content fade"
         style={{
@@ -38,21 +38,27 @@ export const HelloWorld: React.FC<HelloWorldProps> = ({
       >
         <Logo
           name="Remotion logo"
-            logoColor1="#91EAE4"
+          logoColor1="#91EAE4"
           logoColor2="#86A8E7"
           style={{
             translate: interpolate(frame, [25, 55], ["0px 0px", "0px -150px"], {
-              easing: Easing.spring({ damping: 100 }),
+              easing: Easing.spring({
+                damping: 100
+              }),
+
               extrapolateLeft: "clamp",
-              extrapolateRight: "clamp",
+              extrapolateRight: "clamp"
             }),
+
+            scale: 0.979
           }}
         />
         <Title
           name="Welcome title"
           from={35}
-            titleText={titleText}
+          titleText={titleText}
           titleColor={titleColor}
+          hidden
         />
         <Interactive.Div
           name="Editing hint"

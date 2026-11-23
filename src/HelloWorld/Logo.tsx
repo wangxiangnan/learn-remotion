@@ -19,7 +19,7 @@ export type LogoProps = {
 const LogoInner: React.FC<LogoProps> = ({ logoColor1, logoColor2, style }) => {
   const { durationInFrames, fps } = useVideoConfig();
   const frame = useCurrentFrame();
-
+  debugger
   return (
     <Interactive.Div
       style={{
